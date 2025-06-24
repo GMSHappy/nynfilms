@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nynflims</title>
+  <meta name="description" content="Freelance video editor portfolio by Nynke – specializing in weddings, promos & creative storytelling.">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">nynfilms</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" data-aos="fade-in">
+    <video autoplay muted loop class="bg-video">
+      <source src="assets/SSYouTube.online_Showreel nynfilms - 2023_2024_1080p.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay">
+      <a href="#about" class="btn">View My Work</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about" data-aos="fade-up">
+    <div class="about-container">
+      <img src="assets/nynke.jpg" alt="Nynke smiling" class="about-img" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi, I’m Nynke — a freelance video editor who brings stories to life through film. Whether it's weddings or promo content, I edit with passion, precision, and purpose.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio" data-aos="fade-up">
+    <h2 class="section-title">My Work</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+        <iframe src="https://www.youtube.com/embed/wXBwNKGfCIY?start=180" frameborder="0" allowfullscreen></iframe>
+        <h3>Wedding Highlight – Emma & Max</h3>
+      </div>
+      <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+        <h3>Promo Reel – Fitness Studio</h3>
+      </div>
+      <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+        <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
+        <h3>School Showcase – 2024 Graduation</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="photo-gallery" data-aos="fade-up">
+    <h2 class="section-title">Photo Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/img1.jpg" alt="Behind the scenes" onclick="openLightbox(this.src)" />
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/img2.jpg" alt="Camera gear" onclick="openLightbox(this.src)" />
+      </div>
+      <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/img3.jpg" alt="On location" onclick="openLightbox(this.src)" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" />
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:hello@nynfilms.com">hello@nynfilms.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/nynfilms" target="_blank">@nynfilms</a></p>
+    </div>
+    <form action="https://formspree.io/f/xzzgkbbd" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    window.onload = function () {
+      if (window.location.hash) {
+        history.replaceState(null, null, window.location.pathname);
+        window.scrollTo(0, 0);
+      }
+    };
+
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const img = document.getElementById("lightbox-img");
+      img.src = src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+  </script>
+
+</body>
+</html>
